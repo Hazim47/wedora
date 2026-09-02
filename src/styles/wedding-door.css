@@ -1,0 +1,677 @@
+/* =========================================================
+   WEDDING INTRO — IVORY / CHAMPAGNE
+========================================================= */
+
+.door-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  width: 100%;
+  height: 100svh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: radial-gradient(
+    ellipse at center 42%,
+    #fffdf8 0%,
+    #f9f1e3 35%,
+    #eee1ce 72%,
+    #e6d5bd 100%
+  );
+}
+
+/* =========================================================
+   SCENE
+========================================================= */
+
+.door-scene {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  isolation: isolate;
+}
+
+/* =========================================================
+   SOFT CENTER LIGHT
+========================================================= */
+
+.door-scene::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: min(90vw, 800px);
+  height: min(90vw, 800px);
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(255, 246, 224, 0.95) 0%,
+    rgba(238, 211, 170, 0.32) 35%,
+    transparent 70%
+  );
+
+  filter: blur(45px);
+
+  z-index: -2;
+}
+
+/* =========================================================
+   DECORATIVE LIGHT
+========================================================= */
+
+.door-scene::after {
+  content: "✦        ✧              ✦              ✧        ✦";
+
+  position: absolute;
+
+  top: 12%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 100%;
+
+  text-align: center;
+
+  color: rgba(172, 133, 82, 0.28);
+
+  font-size: 12px;
+
+  letter-spacing: 16px;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   AMBIENT LIGHT
+========================================================= */
+
+.ambient-light {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: min(75vw, 600px);
+  height: min(75vw, 600px);
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(210, 169, 104, 0.13),
+    transparent 68%
+  );
+
+  filter: blur(45px);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   FLOOR SHADOW
+========================================================= */
+
+.door-shadow {
+  position: absolute;
+
+  left: 50%;
+  bottom: 5%;
+
+  width: min(78vw, 500px);
+  height: 55px;
+
+  transform: translateX(-50%);
+
+  border-radius: 50%;
+
+  background: radial-gradient(ellipse, rgba(92, 69, 43, 0.18), transparent 70%);
+
+  filter: blur(18px);
+}
+
+/* =========================================================
+   MAIN GATE
+========================================================= */
+
+.wedding-door {
+  position: relative;
+
+  width: min(82vw, 430px);
+  height: min(86svh, 690px);
+
+  perspective: 1800px;
+
+  overflow: visible;
+
+  background: linear-gradient(180deg, #fbf2e2 0%, #ead7bb 48%, #d8bd99 100%);
+
+  border-radius: 215px 215px 12px 12px;
+
+  border: 2px solid #b89562;
+
+  box-shadow:
+    0 0 0 5px rgba(255, 250, 240, 0.75),
+    0 0 0 7px rgba(185, 149, 94, 0.22),
+    0 30px 70px rgba(89, 64, 37, 0.2),
+    0 0 60px rgba(199, 163, 105, 0.18);
+}
+
+/* =========================================================
+   OUTER GOLD FRAME
+========================================================= */
+
+.wedding-door::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 11px;
+
+  border-radius: 204px 204px 8px 8px;
+
+  border: 1px solid rgba(173, 132, 75, 0.7);
+
+  box-shadow:
+    inset 0 0 0 5px rgba(255, 250, 238, 0.38),
+    inset 0 0 30px rgba(169, 128, 72, 0.12);
+
+  pointer-events: none;
+
+  z-index: 80;
+}
+
+/* =========================================================
+   INNER GOLD FRAME
+========================================================= */
+
+.wedding-door::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 24px;
+
+  border-radius: 192px 192px 6px 6px;
+
+  border: 1px solid rgba(155, 113, 61, 0.42);
+
+  pointer-events: none;
+
+  z-index: 80;
+}
+
+/* =========================================================
+   LIGHT BEHIND DOOR
+========================================================= */
+
+.door-opening-light {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 55%;
+  height: 90%;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 2;
+
+  border-radius: 50% 50% 10px 10px;
+
+  background: radial-gradient(
+    ellipse,
+    #ffffff 0%,
+    #fff5df 20%,
+    #f3d9aa 40%,
+    rgba(225, 188, 126, 0.25) 60%,
+    transparent 78%
+  );
+
+  filter: blur(12px);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   DOOR LEAVES
+========================================================= */
+
+.door-leaf {
+  position: absolute;
+
+  top: 0;
+
+  width: 50%;
+  height: 100%;
+
+  z-index: 20;
+
+  overflow: hidden;
+
+  transform-style: preserve-3d;
+
+  backface-visibility: hidden;
+
+  background: linear-gradient(
+    145deg,
+    #f9efdf 0%,
+    #ead7ba 35%,
+    #d9bd96 70%,
+    #c8a77a 100%
+  );
+
+  box-shadow:
+    inset 0 0 0 1px rgba(164, 124, 70, 0.45),
+    inset 0 0 40px rgba(117, 81, 40, 0.08);
+}
+
+/* =========================================================
+   LEFT
+========================================================= */
+
+.door-leaf-left {
+  left: 0;
+
+  transform-origin: left center;
+
+  border-radius: 210px 0 0 0;
+
+  border-right: 1px solid rgba(150, 108, 55, 0.45);
+}
+
+/* =========================================================
+   RIGHT
+========================================================= */
+
+.door-leaf-right {
+  right: 0;
+
+  transform-origin: right center;
+
+  border-radius: 0 210px 0 0;
+
+  border-left: 1px solid rgba(150, 108, 55, 0.45);
+}
+
+/* =========================================================
+   DOOR BORDER
+========================================================= */
+
+.door-border {
+  position: absolute;
+
+  inset: 20px;
+
+  padding: 13px;
+
+  border-radius: 190px 190px 4px 4px;
+
+  border: 1px solid rgba(169, 128, 70, 0.48);
+}
+
+/* =========================================================
+   INNER PANEL
+========================================================= */
+
+.door-inner {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  border-radius: 176px 176px 3px 3px;
+
+  border: 1px solid rgba(169, 128, 70, 0.25);
+
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.18),
+    rgba(190, 154, 102, 0.07)
+  );
+}
+
+/* =========================================================
+   ELEGANT ARCH DETAIL
+========================================================= */
+
+.door-inner::before {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 8%;
+
+  width: 72%;
+  height: 34%;
+
+  transform: translateX(-50%);
+
+  border-radius: 50% 50% 0 0;
+
+  border: 1px solid rgba(172, 131, 74, 0.38);
+
+  border-bottom: none;
+}
+
+/* =========================================================
+   CENTRAL ORNAMENT
+========================================================= */
+
+.door-ornament {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 118px;
+  height: 118px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(168, 126, 68, 0.28);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: rgba(161, 119, 63, 0.38);
+
+  font-size: 18px;
+}
+
+/* =========================================================
+   INITIALS BUTTON
+========================================================= */
+
+.initials-button {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  z-index: 100;
+
+  width: 94px;
+  height: 94px;
+
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  padding: 0;
+
+  border-radius: 50%;
+
+  border: 1px solid #b08a52;
+
+  background: radial-gradient(
+    circle at 32% 28%,
+    #ffffff 0%,
+    #fff7e8 30%,
+    #ead0a4 72%,
+    #c29b64 100%
+  );
+
+  color: #5d452d;
+
+  font-family: "Cormorant Garamond", serif;
+
+  cursor: pointer;
+
+  outline: none;
+
+  box-shadow:
+    0 0 0 5px rgba(255, 255, 255, 0.75),
+    0 0 0 7px rgba(183, 145, 87, 0.22),
+    0 12px 35px rgba(91, 64, 36, 0.22),
+    0 0 30px rgba(204, 165, 101, 0.28),
+    inset 0 0 15px rgba(255, 255, 255, 0.65);
+
+  /* مهم جدًا */
+  transition:
+    filter 0.2s ease,
+    box-shadow 0.2s ease;
+
+  -webkit-tap-highlight-color: transparent;
+
+  touch-action: manipulation;
+}
+
+/* =========================================================
+   BUTTON RINGS
+========================================================= */
+
+.initials-button::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -12px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(173, 133, 76, 0.25);
+
+  pointer-events: none;
+}
+
+.initials-button::after {
+  content: "";
+
+  position: absolute;
+
+  inset: -20px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(173, 133, 76, 0.12);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   BUTTON HOVER
+   NO POSITION CHANGE
+========================================================= */
+
+.initials-button:hover {
+  transform: translate(-50%, -50%) !important;
+
+  filter: brightness(1.04);
+
+  box-shadow:
+    0 0 0 5px rgba(255, 255, 255, 0.85),
+    0 0 0 7px rgba(183, 145, 87, 0.28),
+    0 15px 40px rgba(91, 64, 36, 0.25),
+    0 0 40px rgba(204, 165, 101, 0.38),
+    inset 0 0 18px rgba(255, 255, 255, 0.75);
+}
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.initials-button:focus,
+.initials-button:focus-visible {
+  outline: none;
+
+  transform: translate(-50%, -50%) !important;
+}
+
+/* =========================================================
+   ACTIVE
+========================================================= */
+
+.initials-button:active {
+  transform: translate(-50%, -50%) !important;
+
+  filter: brightness(0.98);
+}
+
+/* =========================================================
+   INITIALS
+========================================================= */
+
+.initial {
+  font-size: 31px;
+
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: 1px;
+}
+
+/* =========================================================
+   &
+========================================================= */
+
+.initial-divider {
+  margin-top: 2px;
+
+  font-size: 13px;
+
+  color: #9c784b;
+}
+
+/* =========================================================
+   OPENING FLASH
+========================================================= */
+
+.opening-flash {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 150px;
+  height: 150px;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 40;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 244, 218, 0.9) 25%,
+    rgba(230, 190, 124, 0.35) 48%,
+    transparent 72%
+  );
+
+  filter: blur(8px);
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .wedding-door {
+    width: 84vw;
+    height: 84svh;
+
+    border-radius: 42vw 42vw 10px 10px;
+  }
+
+  .wedding-door::before {
+    border-radius: 38vw 38vw 8px 8px;
+  }
+
+  .wedding-door::after {
+    border-radius: 35vw 35vw 6px 6px;
+  }
+
+  .door-border {
+    inset: 17px;
+    padding: 9px;
+
+    border-radius: 35vw 35vw 3px 3px;
+  }
+
+  .door-inner {
+    border-radius: 32vw 32vw 2px 2px;
+  }
+
+  .initials-button {
+    width: 80px;
+    height: 80px;
+  }
+
+  .initial {
+    font-size: 26px;
+  }
+
+  .initial-divider {
+    font-size: 11px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL
+========================================================= */
+
+@media (max-width: 360px) {
+  .wedding-door {
+    width: 88vw;
+    height: 82svh;
+  }
+
+  .initials-button {
+    width: 72px;
+    height: 72px;
+  }
+
+  .initial {
+    font-size: 23px;
+  }
+}
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 768px) {
+  .wedding-door {
+    width: 430px;
+    height: 690px;
+  }
+
+  .initials-button {
+    width: 94px;
+    height: 94px;
+  }
+}

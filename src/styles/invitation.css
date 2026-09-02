@@ -1,0 +1,843 @@
+/* =========================================
+   INVITATION SCREEN
+========================================= */
+
+.invitation-screen {
+  position: fixed;
+  inset: 0;
+
+  z-index: 1;
+
+  width: 100%;
+  height: 100svh;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background:
+    radial-gradient(
+      circle at 50% 12%,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(250, 246, 237, 0.96) 30%,
+      transparent 65%
+    ),
+    linear-gradient(180deg, #faf5ec 0%, #f4e9d9 52%, #e9d8c1 100%);
+
+  -webkit-overflow-scrolling: touch;
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.invitation-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 55px;
+
+  padding: 35px 0 80px;
+}
+
+/* =========================================
+   INVITATION
+   NO CARD / SAME WEBSITE BACKGROUND
+========================================= */
+
+.invitation-card {
+  position: relative;
+
+  width: min(620px, calc(100% - 28px));
+
+  min-height: 760px;
+
+  margin-top: 10px;
+
+  overflow: hidden;
+
+  /* نفس خلفية الموقع */
+  background: transparent;
+
+  /* إلغاء حدود الكرت */
+  border: none;
+
+  /* إلغاء ظل الكرت */
+  box-shadow: none;
+
+  /* ما في شكل Card */
+  border-radius: 0;
+
+  isolation: isolate;
+}
+
+/* =========================================
+   REMOVE CARD FRAMES
+========================================= */
+
+/* =========================================
+   SOFT CORNER FLOWERS 🌸
+========================================= */
+
+.invitation-card::before,
+.invitation-card::after {
+  content: "❀";
+
+  position: absolute;
+
+  z-index: 4;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 105px;
+
+  line-height: 1;
+
+  color: rgba(214, 190, 157, 0.55);
+
+  pointer-events: none;
+
+  text-shadow: 0 2px 18px rgba(184, 150, 105, 0.1);
+
+  filter: blur(0.15px);
+
+  opacity: 0;
+
+  animation: cornerFlowerReveal 1.8s ease forwards;
+}
+
+/* أعلى اليمين */
+.invitation-card::before {
+  top: -18px;
+  right: -12px;
+
+  transform: rotate(12deg);
+
+  animation-delay: 0.8s;
+}
+
+/* أسفل اليسار */
+.invitation-card::after {
+  bottom: -18px;
+  left: -12px;
+
+  transform: rotate(192deg);
+
+  animation-delay: 1.1s;
+}
+
+/* ظهور ناعم */
+@keyframes cornerFlowerReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.65) rotate(0deg);
+  }
+
+  60% {
+    opacity: 0.75;
+  }
+
+  100% {
+    opacity: 0.55;
+  }
+}
+
+/* حركة تنفس خفيفة بعد الظهور */
+
+.invitation-card::before {
+  animation:
+    cornerFlowerReveal 1.8s ease forwards,
+    flowerBreath 5s ease-in-out 2.6s infinite;
+}
+
+.invitation-card::after {
+  animation:
+    cornerFlowerReveal 1.8s ease forwards,
+    flowerBreath 5.5s ease-in-out 3s infinite;
+}
+
+@keyframes flowerBreath {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.invitation-card-content {
+  position: relative;
+
+  z-index: 5;
+
+  min-height: 760px;
+
+  padding: 65px 50px 50px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+/* =========================================
+   BISMILLAH
+========================================= */
+
+.bismillah {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 25px;
+
+  font-weight: 500;
+
+  color: #806039;
+
+  margin-bottom: 22px;
+}
+
+/* =========================================
+   LUXURY ORNAMENT
+========================================= */
+
+.luxury-ornament {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 25px;
+}
+
+.luxury-ornament span {
+  width: 60px;
+
+  height: 1px;
+
+  background: linear-gradient(90deg, transparent, #b18a55);
+}
+
+.luxury-ornament span:last-child {
+  background: linear-gradient(90deg, #b18a55, transparent);
+}
+
+.luxury-ornament b {
+  color: #b18a55;
+
+  font-size: 15px;
+
+  font-weight: 400;
+}
+
+/* =========================================
+   DATE
+========================================= */
+
+.wedding-date {
+  font-family: "Playfair Display", serif;
+
+  font-size: clamp(24px, 4vw, 34px);
+
+  color: #795b37;
+
+  white-space: nowrap;
+
+  margin-bottom: 4px;
+}
+
+.date-label {
+  font-family: "Cormorant Garamond", serif;
+
+  color: #a1845c;
+
+  font-size: 18px;
+
+  margin-bottom: 32px;
+}
+
+/* =========================================
+   INTRO
+========================================= */
+
+.invitation-intro {
+  margin-bottom: 25px;
+}
+
+.invitation-intro span {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 21px;
+
+  color: #8d704b;
+}
+
+/* =========================================
+   PARENTS SECTION
+========================================= */
+
+.parents-section {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    70px
+    1fr;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 28px;
+}
+
+/* =========================================
+   PARENT CARD
+   ALSO NO BACKGROUND
+========================================= */
+
+.parent-card {
+  position: relative;
+
+  min-height: 110px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 15px 10px;
+
+  background: transparent;
+
+  /* أخف خط فقط حول أسماء الآباء */
+  border: 1px solid rgba(171, 131, 75, 0.22);
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.parent-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 5px;
+
+  border: 1px solid rgba(171, 131, 75, 0.1);
+
+  pointer-events: none;
+}
+
+.parent-card:hover {
+  transform: translateY(-4px);
+
+  border-color: rgba(171, 131, 75, 0.45);
+
+  box-shadow: 0 12px 30px rgba(100, 70, 35, 0.04);
+}
+
+/* =========================================
+   BIG "السيد"
+========================================= */
+
+.parent-title {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 35px;
+
+  line-height: 0.8;
+
+  color: #9b7546;
+
+  font-weight: 500;
+
+  margin-bottom: 13px;
+}
+
+/* =========================================
+   PARENT NAME
+========================================= */
+
+.parent-name {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 20px;
+
+  font-weight: 600;
+
+  color: #664a2d;
+
+  line-height: 1.2;
+}
+
+/* =========================================
+   CENTER ORNAMENT
+========================================= */
+
+.parents-center {
+  height: 110px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.vertical-line {
+  width: 1px;
+
+  flex: 1;
+
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(174, 132, 72, 0.65),
+    transparent
+  );
+}
+
+.center-diamond {
+  width: 30px;
+  height: 30px;
+
+  margin: 7px 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #a67d49;
+
+  font-size: 13px;
+
+  border: 1px solid rgba(166, 125, 73, 0.55);
+
+  transform: rotate(45deg);
+}
+
+/* =========================================
+   ELEGANT DIVIDER
+========================================= */
+
+.elegant-divider {
+  height: 1px;
+
+  position: relative;
+
+  background: linear-gradient(90deg, transparent, #b18a55, transparent);
+
+  margin-bottom: 25px;
+}
+
+.elegant-divider span {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  padding: 0 12px;
+
+  /* نفس الخلفية */
+  background: transparent;
+
+  color: #a77c48;
+
+  font-size: 18px;
+}
+
+/* =========================================
+   WEDDING TEXT
+========================================= */
+
+.wedding-text {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 22px;
+
+  color: #8c6d45;
+
+  margin-bottom: 8px;
+}
+
+/* =========================================
+   COUPLE NAMES
+========================================= */
+
+.couple-names {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 22px;
+
+  margin-bottom: 22px;
+}
+
+.bride-name,
+.groom-name {
+  font-family: "Great Vibes", cursive;
+
+  font-size: clamp(65px, 10vw, 90px);
+
+  line-height: 1;
+
+  color: #735431;
+
+  text-shadow: 0 3px 12px rgba(92, 65, 34, 0.14);
+}
+
+.names-symbol {
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 36px;
+
+  color: #b18a55;
+}
+
+/* =========================================
+   CLOSING
+========================================= */
+
+.invitation-closing {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  color: #806541;
+
+  font-size: 20px;
+
+  line-height: 1.45;
+
+  margin-bottom: 27px;
+}
+
+.invitation-closing span:last-child {
+  font-size: 17px;
+
+  color: #a28761;
+}
+
+/* =========================================
+   BOTTOM DATE
+========================================= */
+
+.date-bottom {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  font-family: "Playfair Display", serif;
+
+  color: #88673f;
+
+  font-size: 15px;
+
+  letter-spacing: 0.15em;
+}
+
+.date-bottom i {
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #b18a55;
+}
+
+/* =========================================
+   OLD CARD CORNERS
+   COMPLETELY REMOVED
+========================================= */
+
+.card-corner {
+  display: none;
+}
+/* =========================================
+   CINEMATIC FLOATING EFFECTS
+========================================= */
+
+.luxury-ornament b {
+  animation: luxuryStar 3s ease-in-out infinite;
+}
+
+@keyframes luxuryStar {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.65;
+  }
+
+  50% {
+    transform: scale(1.25);
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   COUPLE NAMES SOFT GLOW
+========================================= */
+
+.bride-name,
+.groom-name {
+  animation: namesFloat 5s ease-in-out infinite;
+}
+
+@keyframes namesFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+/* =========================================
+   GOLD PARTICLES
+========================================= */
+
+.gold-particle {
+  animation:
+    floatingParticle 5s ease-in-out infinite,
+    particleGlow 3s ease-in-out infinite;
+}
+
+@keyframes particleGlow {
+  0%,
+  100% {
+    filter: blur(0);
+  }
+
+  50% {
+    filter: blur(1px);
+  }
+}
+
+/* =========================================
+   SHINE
+========================================= */
+
+.card-shine {
+  position: absolute;
+
+  z-index: 3;
+
+  top: -30%;
+
+  left: -80%;
+
+  width: 50%;
+
+  height: 160%;
+
+  transform: rotate(18deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+
+  animation: invitationShine 8s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+@keyframes invitationShine {
+  0% {
+    left: -80%;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  35% {
+    left: 135%;
+    opacity: 0;
+  }
+
+  100% {
+    left: 135%;
+    opacity: 0;
+  }
+}
+
+/* =========================================
+   PARTICLES
+========================================= */
+
+.gold-particle {
+  position: absolute;
+
+  z-index: 3;
+
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #b89563;
+
+  opacity: 0.3;
+
+  animation: floatingParticle 5s ease-in-out infinite;
+
+  pointer-events: none;
+}
+
+.particle-1 {
+  top: 25%;
+  left: 12%;
+}
+
+.particle-2 {
+  top: 44%;
+  right: 10%;
+
+  animation-delay: 1.5s;
+}
+
+.particle-3 {
+  bottom: 25%;
+  left: 15%;
+
+  animation-delay: 2.5s;
+}
+
+.particle-4 {
+  bottom: 35%;
+  right: 14%;
+
+  animation-delay: 3.5s;
+}
+
+@keyframes floatingParticle {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+
+    opacity: 0.2;
+  }
+
+  50% {
+    transform: translateY(-15px) scale(1.6);
+
+    opacity: 0.6;
+  }
+}
+
+/* =========================================
+   BACKGROUND LIGHT
+========================================= */
+
+.invitation-screen::before {
+  content: "";
+
+  position: fixed;
+
+  left: 50%;
+  top: 5%;
+
+  width: 550px;
+  height: 550px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(201, 163, 108, 0.13),
+    transparent 70%
+  );
+
+  filter: blur(45px);
+
+  pointer-events: none;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .invitation-card {
+    width: calc(100% - 20px);
+
+    min-height: auto;
+  }
+
+  .invitation-card-content {
+    min-height: auto;
+
+    padding: 55px 25px 40px;
+  }
+
+  .parents-section {
+    grid-template-columns:
+      1fr
+      45px
+      1fr;
+
+    gap: 5px;
+  }
+
+  .parent-name {
+    font-size: 17px;
+  }
+
+  .parent-title {
+    font-size: 30px;
+  }
+
+  /* تأكيد إزالة الحواف على الموبايل */
+  .card-corner {
+    display: none;
+  }
+}

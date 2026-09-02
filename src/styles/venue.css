@@ -1,0 +1,725 @@
+/* =========================================
+   VENUE — LUXURY EDITION
+========================================= */
+
+.venue-section {
+  position: relative;
+
+  width: min(100%, 570px);
+
+  margin-top: 10px;
+
+  padding: 20px 12px 65px;
+
+  text-align: center;
+
+  direction: rtl;
+
+  isolation: isolate;
+}
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+.venue-section::before {
+  content: "";
+
+  position: absolute;
+
+  top: 10%;
+
+  left: 50%;
+
+  width: 420px;
+
+  height: 400px;
+
+  transform: translateX(-50%);
+
+  background: radial-gradient(circle, rgba(190, 151, 96, 0.1), transparent 68%);
+
+  filter: blur(25px);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.venue-heading {
+  position: relative;
+
+  margin-bottom: 25px;
+}
+
+/* =========================================
+   SMALL TITLE
+========================================= */
+
+.venue-small-title {
+  margin: 0 0 2px;
+
+  color: #a17b4d;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  letter-spacing: 3px;
+}
+
+/* =========================================
+   DECORATION
+========================================= */
+
+.venue-decoration {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  margin-bottom: 10px;
+}
+
+.venue-decoration span {
+  width: 65px;
+
+  height: 1px;
+
+  background: linear-gradient(90deg, transparent, rgba(166, 127, 76, 0.55));
+}
+
+.venue-decoration span:last-child {
+  background: linear-gradient(90deg, rgba(166, 127, 76, 0.55), transparent);
+}
+
+.venue-decoration b {
+  color: #b18a58;
+
+  font-size: 12px;
+
+  font-weight: 400;
+
+  text-shadow: 0 0 10px rgba(177, 138, 88, 0.4);
+}
+
+/* =========================================
+   TITLE
+========================================= */
+
+.venue-title {
+  margin: 0;
+
+  color: #533a25;
+
+  font-family: "Amiri", serif;
+
+  font-size: clamp(28px, 6vw, 36px);
+
+  font-weight: 700;
+
+  line-height: 1.5;
+
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+.venue-subtitle {
+  margin: 4px 0 0;
+
+  color: #8d6d49;
+
+  font-family: "Amiri", serif;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+/* =========================================
+   IMAGE WRAPPER
+========================================= */
+
+.venue-image-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+
+  background: #eee5d5;
+
+  border: 1px solid rgba(166, 127, 76, 0.45);
+
+  box-shadow:
+    0 30px 65px rgba(70, 47, 28, 0.16),
+    0 10px 25px rgba(70, 47, 28, 0.08);
+
+  isolation: isolate;
+}
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.venue-image {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transform: scale(1.02);
+
+  filter: saturate(0.88) contrast(0.96) brightness(0.97);
+
+  transition:
+    transform 1.5s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.8s ease;
+}
+
+/* =========================================
+   IMAGE HOVER
+========================================= */
+
+.venue-image-wrapper:hover .venue-image {
+  transform: scale(1.07);
+
+  filter: saturate(0.98) contrast(1) brightness(1);
+}
+
+/* =========================================
+   INNER FRAME
+========================================= */
+
+.venue-image-frame {
+  position: absolute;
+
+  inset: 9px;
+
+  z-index: 3;
+
+  border: 1px solid rgba(255, 241, 213, 0.75);
+
+  pointer-events: none;
+
+  box-shadow: inset 0 0 20px rgba(40, 25, 12, 0.12);
+}
+
+/* =========================================
+   SECOND INNER FRAME
+========================================= */
+
+.venue-image-frame::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 5px;
+
+  border: 1px solid rgba(177, 139, 87, 0.32);
+}
+
+/* =========================================
+   IMAGE DARK GRADIENT
+========================================= */
+
+.venue-image-wrapper::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  background: linear-gradient(
+    180deg,
+    rgba(30, 18, 9, 0.05),
+    transparent 35%,
+    rgba(30, 18, 9, 0.15)
+  );
+
+  pointer-events: none;
+}
+
+/* =========================================
+   MOVING SHINE
+========================================= */
+
+.venue-image-shine {
+  position: absolute;
+
+  top: -40%;
+
+  left: -70%;
+
+  width: 35%;
+
+  height: 180%;
+
+  z-index: 4;
+
+  transform: rotate(18deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.32),
+    transparent
+  );
+
+  pointer-events: none;
+
+  animation: venueShine 7s ease-in-out infinite;
+}
+
+@keyframes venueShine {
+  0% {
+    left: -70%;
+  }
+
+  45%,
+  100% {
+    left: 145%;
+  }
+}
+
+/* =========================================
+   CORNER ORNAMENTS
+========================================= */
+
+.venue-corner {
+  position: absolute;
+
+  z-index: 5;
+
+  color: rgba(210, 174, 116, 0.85);
+
+  font-size: 11px;
+
+  text-shadow: 0 0 10px rgba(210, 174, 116, 0.4);
+
+  pointer-events: none;
+}
+
+.venue-corner-tl {
+  top: 15px;
+
+  left: 15px;
+}
+
+.venue-corner-tr {
+  top: 15px;
+
+  right: 15px;
+}
+
+.venue-corner-bl {
+  bottom: 15px;
+
+  left: 15px;
+}
+
+.venue-corner-br {
+  bottom: 15px;
+
+  right: 15px;
+}
+
+/* =========================================
+   LOCATION DECORATION
+========================================= */
+
+.venue-location-info {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 13px;
+
+  margin: 25px 0 17px;
+}
+
+.venue-info-line {
+  width: 70px;
+
+  height: 1px;
+
+  background: linear-gradient(90deg, transparent, rgba(166, 127, 76, 0.45));
+}
+
+.venue-info-line:last-child {
+  background: linear-gradient(90deg, rgba(166, 127, 76, 0.45), transparent);
+}
+
+/* =========================================
+   PIN
+========================================= */
+
+.venue-pin {
+  width: 34px;
+
+  height: 34px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid rgba(166, 127, 76, 0.38);
+
+  border-radius: 50%;
+
+  color: #9c7549;
+
+  background: rgba(255, 250, 240, 0.7);
+
+  box-shadow: 0 5px 15px rgba(88, 58, 32, 0.08);
+}
+
+.venue-pin span {
+  font-size: 19px;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   LOCATION BUTTON
+========================================= */
+
+.location-button {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 11px;
+
+  min-width: 215px;
+
+  padding: 13px 24px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(166, 127, 76, 0.5);
+
+  border-radius: 2px;
+
+  background: linear-gradient(135deg, #b99562, #987044);
+
+  color: #fffaf0;
+
+  text-decoration: none;
+
+  font-family: "Amiri", serif;
+
+  font-size: 18px;
+
+  box-shadow: 0 15px 30px rgba(105, 73, 40, 0.2);
+
+  transition:
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+/* =========================================
+   BUTTON SHINE
+========================================= */
+
+.location-button::before {
+  content: "";
+
+  position: absolute;
+
+  top: -100%;
+
+  left: -80%;
+
+  width: 50%;
+
+  height: 300%;
+
+  transform: rotate(20deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+
+  transition: left 0.7s ease;
+}
+
+.location-button:hover::before {
+  left: 140%;
+}
+
+.location-button:hover {
+  box-shadow: 0 18px 38px rgba(105, 73, 40, 0.27);
+}
+
+/* =========================================
+   LOCATION ICON
+========================================= */
+
+.location-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 18px;
+}
+
+/* =========================================
+   ARROW
+========================================= */
+
+.location-arrow {
+  font-family: Arial, sans-serif;
+
+  font-size: 17px;
+
+  transition: transform 0.3s ease;
+}
+
+.location-button:hover .location-arrow {
+  transform: translateX(-4px);
+}
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.venue-bottom {
+  margin-top: 28px;
+
+  color: #8c6a46;
+
+  font-family: "Amiri", serif;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+.venue-bottom > div {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  margin-top: 8px;
+}
+
+.venue-bottom i {
+  display: block;
+
+  width: 35px;
+
+  height: 1px;
+
+  background: linear-gradient(90deg, transparent, rgba(166, 127, 76, 0.45));
+}
+
+.venue-bottom i:last-child {
+  background: linear-gradient(90deg, rgba(166, 127, 76, 0.45), transparent);
+}
+
+.venue-bottom b {
+  color: #b18a58;
+
+  font-size: 12px;
+
+  font-weight: 400;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .venue-section {
+    width: 100%;
+
+    padding: 15px 7px 45px;
+  }
+
+  .venue-section::before {
+    width: 300px;
+
+    height: 300px;
+  }
+
+  .venue-heading {
+    margin-bottom: 20px;
+  }
+
+  .venue-decoration {
+    gap: 8px;
+  }
+
+  .venue-decoration span {
+    width: 42px;
+  }
+
+  .venue-small-title {
+    font-size: 12px;
+
+    letter-spacing: 2px;
+  }
+
+  .venue-title {
+    font-size: 27px;
+  }
+
+  .venue-subtitle {
+    font-size: 15px;
+  }
+
+  .venue-image-wrapper {
+    aspect-ratio: 4 / 3;
+  }
+
+  .venue-image-frame {
+    inset: 6px;
+  }
+
+  .venue-image-frame::before {
+    inset: 4px;
+  }
+
+  .venue-corner {
+    font-size: 9px;
+  }
+
+  .venue-corner-tl {
+    top: 11px;
+
+    left: 11px;
+  }
+
+  .venue-corner-tr {
+    top: 11px;
+
+    right: 11px;
+  }
+
+  .venue-corner-bl {
+    bottom: 11px;
+
+    left: 11px;
+  }
+
+  .venue-corner-br {
+    bottom: 11px;
+
+    right: 11px;
+  }
+
+  .venue-location-info {
+    margin-top: 20px;
+
+    gap: 9px;
+  }
+
+  .venue-info-line {
+    width: 48px;
+  }
+
+  .venue-pin {
+    width: 30px;
+
+    height: 30px;
+  }
+
+  .location-button {
+    min-width: 195px;
+
+    padding: 11px 20px;
+
+    font-size: 17px;
+  }
+
+  .venue-bottom {
+    margin-top: 23px;
+
+    font-size: 14px;
+  }
+}
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+  .venue-section {
+    padding-left: 4px;
+
+    padding-right: 4px;
+  }
+
+  .venue-decoration span {
+    width: 30px;
+  }
+
+  .venue-title {
+    font-size: 24px;
+  }
+
+  .venue-subtitle {
+    font-size: 14px;
+  }
+
+  .venue-image-wrapper {
+    aspect-ratio: 4 / 3;
+  }
+
+  .venue-image-frame {
+    inset: 5px;
+  }
+
+  .venue-location-info {
+    margin-top: 17px;
+  }
+
+  .venue-info-line {
+    width: 35px;
+  }
+
+  .location-button {
+    min-width: 180px;
+
+    font-size: 16px;
+  }
+}

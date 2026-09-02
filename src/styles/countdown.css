@@ -1,0 +1,809 @@
+/* =========================================
+   WEDDING COUNTDOWN — LUXURY EDITION
+========================================= */
+
+.countdown-section {
+  position: relative;
+
+  width: min(100%, 620px);
+
+  margin-top: 15px;
+
+  padding: 45px 22px 55px;
+
+  text-align: center;
+
+  direction: rtl;
+
+  isolation: isolate;
+}
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+.countdown-section::before {
+  content: "";
+
+  position: absolute;
+
+  top: 15%;
+
+  left: 50%;
+
+  width: 420px;
+
+  height: 260px;
+
+  transform: translateX(-50%);
+
+  background: radial-gradient(
+    circle,
+    rgba(190, 151, 96, 0.13),
+    transparent 68%
+  );
+
+  filter: blur(20px);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+/* =========================================
+   TOP ORNAMENT
+========================================= */
+
+.countdown-top-ornament {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 13px;
+
+  margin-bottom: 14px;
+}
+
+.countdown-top-ornament span {
+  color: #ad8754;
+
+  font-size: 12px;
+
+  text-shadow: 0 2px 8px rgba(166, 127, 76, 0.35);
+}
+
+.countdown-top-ornament::before,
+.countdown-top-ornament::after {
+  content: "";
+
+  width: 75px;
+
+  height: 1px;
+
+  background: linear-gradient(90deg, transparent, rgba(166, 127, 76, 0.55));
+}
+
+.countdown-top-ornament::after {
+  background: linear-gradient(90deg, rgba(166, 127, 76, 0.55), transparent);
+}
+
+/* =========================================
+   TITLE
+========================================= */
+
+.countdown-title {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 15px;
+
+  margin: 0 0 8px;
+
+  color: #755538;
+
+  font-family: "Amiri", serif;
+
+  font-size: 22px;
+
+  font-weight: 400;
+
+  line-height: 1.6;
+}
+
+.countdown-title::after {
+  content: "♡";
+
+  position: absolute;
+
+  bottom: -25px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  color: rgba(166, 127, 76, 0.55);
+
+  font-size: 13px;
+}
+
+.countdown-line {
+  width: 65px;
+
+  height: 1px;
+
+  background: linear-gradient(90deg, transparent, rgba(166, 127, 76, 0.58));
+}
+
+.countdown-line:last-child {
+  background: linear-gradient(90deg, rgba(166, 127, 76, 0.58), transparent);
+}
+
+/* =========================================
+   DATE MESSAGE
+========================================= */
+
+.countdown-date {
+  margin-top: 32px;
+
+  color: #a17b4d;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: 15px;
+
+  font-weight: 500;
+
+  letter-spacing: 4px;
+
+  text-transform: uppercase;
+}
+
+/* =========================================
+   MAIN COUNTDOWN FRAME
+========================================= */
+
+.countdown-frame {
+  position: relative;
+
+  margin-top: 20px;
+
+  padding: 27px 18px 25px;
+
+  border: 1px solid rgba(166, 127, 76, 0.32);
+
+  background: linear-gradient(
+    145deg,
+    rgba(255, 252, 246, 0.88),
+    rgba(244, 232, 215, 0.65)
+  );
+
+  box-shadow:
+    0 25px 60px rgba(72, 48, 28, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.65);
+
+  overflow: hidden;
+}
+
+/* =========================================
+   INNER FRAME
+========================================= */
+
+.countdown-frame::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 7px;
+
+  border: 1px solid rgba(166, 127, 76, 0.16);
+
+  pointer-events: none;
+}
+
+/* =========================================
+   FRAME TOP GOLD LINE
+========================================= */
+
+.countdown-frame::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 50%;
+
+  width: 120px;
+
+  height: 2px;
+
+  transform: translateX(-50%);
+
+  background: linear-gradient(90deg, transparent, #b18a58, transparent);
+
+  box-shadow: 0 0 12px rgba(177, 138, 88, 0.45);
+}
+
+/* =========================================
+   FLOATING GOLD DECORATIONS
+========================================= */
+
+.countdown-frame .countdown-decoration {
+  position: absolute;
+
+  color: rgba(166, 127, 76, 0.35);
+
+  font-family: serif;
+
+  pointer-events: none;
+}
+
+.countdown-frame .decoration-one {
+  top: 13px;
+
+  left: 18px;
+
+  font-size: 13px;
+}
+
+.countdown-frame .decoration-two {
+  top: 13px;
+
+  right: 18px;
+
+  font-size: 13px;
+}
+
+.countdown-frame .decoration-three {
+  bottom: 13px;
+
+  left: 18px;
+
+  font-size: 10px;
+}
+
+.countdown-frame .decoration-four {
+  bottom: 13px;
+
+  right: 18px;
+
+  font-size: 10px;
+}
+
+/* =========================================
+   COUNTDOWN CONTAINER
+========================================= */
+
+.countdown-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 12px;
+
+  direction: ltr;
+}
+
+/* =========================================
+   COUNTDOWN BOX
+========================================= */
+
+.countdown-box {
+  position: relative;
+
+  flex: 1;
+
+  width: 100%;
+
+  max-width: 108px;
+
+  height: 112px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 1px solid rgba(166, 127, 76, 0.36);
+
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.94),
+    rgba(246, 235, 220, 0.82)
+  );
+
+  box-shadow:
+    0 14px 30px rgba(77, 52, 31, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.65);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+}
+
+/* =========================================
+   HOVER EFFECT
+========================================= */
+
+.countdown-box:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(166, 127, 76, 0.62);
+
+  box-shadow:
+    0 20px 40px rgba(77, 52, 31, 0.15),
+    0 0 25px rgba(177, 138, 88, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+}
+
+/* =========================================
+   GOLD TOP ACCENT
+========================================= */
+
+.countdown-box::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 50%;
+
+  width: 48px;
+
+  height: 2px;
+
+  transform: translateX(-50%);
+
+  background: linear-gradient(90deg, transparent, #b18a58, transparent);
+
+  box-shadow: 0 0 10px rgba(177, 138, 88, 0.4);
+}
+
+/* =========================================
+   INNER BORDER
+========================================= */
+
+.countdown-box::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 6px;
+
+  border: 1px solid rgba(166, 127, 76, 0.11);
+
+  pointer-events: none;
+}
+
+/* =========================================
+   NUMBER
+========================================= */
+
+.countdown-number {
+  position: relative;
+
+  z-index: 3;
+
+  color: #513923;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: clamp(43px, 8vw, 58px);
+
+  font-weight: 600;
+
+  line-height: 0.9;
+
+  letter-spacing: 1px;
+
+  text-shadow: 0 2px 1px rgba(255, 255, 255, 0.9);
+}
+
+/* =========================================
+   NUMBER GOLD GLOW
+========================================= */
+
+.countdown-number::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+
+  bottom: -14px;
+
+  width: 22px;
+
+  height: 1px;
+
+  transform: translateX(-50%);
+
+  background: #b18a58;
+
+  opacity: 0.6;
+}
+
+/* =========================================
+   LABEL
+========================================= */
+
+.countdown-label {
+  position: relative;
+
+  z-index: 3;
+
+  margin-top: 17px;
+
+  color: #92704a;
+
+  font-family: "Amiri", serif;
+
+  font-size: 14px;
+
+  line-height: 1;
+
+  letter-spacing: 0.5px;
+}
+
+/* =========================================
+   SEPARATOR
+========================================= */
+
+.countdown-separator {
+  position: relative;
+
+  width: 12px;
+
+  height: 112px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+}
+
+.countdown-separator::before,
+.countdown-separator::after {
+  content: "";
+
+  width: 3px;
+
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: #b18a58;
+
+  box-shadow: 0 0 8px rgba(177, 138, 88, 0.4);
+}
+
+/* =========================================
+   BOTTOM MESSAGE
+========================================= */
+
+.countdown-message {
+  margin-top: 25px;
+
+  color: #8b6a47;
+
+  font-family: "Amiri", serif;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+.countdown-message span {
+  display: block;
+}
+
+.countdown-message span:last-child {
+  color: #aa8353;
+
+  font-size: 13px;
+
+  margin-top: 2px;
+}
+
+/* =========================================
+   BOTTOM ORNAMENT
+========================================= */
+
+.countdown-bottom-ornament {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 25px;
+}
+
+.countdown-bottom-ornament::before,
+.countdown-bottom-ornament::after {
+  content: "";
+
+  width: 45px;
+
+  height: 1px;
+
+  background: linear-gradient(90deg, transparent, rgba(166, 127, 76, 0.45));
+}
+
+.countdown-bottom-ornament::after {
+  background: linear-gradient(90deg, rgba(166, 127, 76, 0.45), transparent);
+}
+
+.countdown-bottom-ornament span {
+  color: #b18a58;
+
+  font-size: 11px;
+}
+
+/* =========================================
+   WRAPPER
+========================================= */
+
+.countdown-wrapper {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  overflow: visible;
+}
+
+/* =========================================
+   GOLD LIGHT SWEEP
+========================================= */
+
+.countdown-frame .countdown-light {
+  position: absolute;
+
+  top: -30%;
+
+  left: -70%;
+
+  width: 45%;
+
+  height: 160%;
+
+  transform: rotate(18deg);
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+
+  pointer-events: none;
+
+  animation: countdownLight 7s ease-in-out infinite;
+}
+
+@keyframes countdownLight {
+  0% {
+    left: -70%;
+  }
+
+  45%,
+  100% {
+    left: 140%;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .countdown-section {
+    width: 100%;
+
+    margin-top: 8px;
+
+    padding: 35px 8px 45px;
+  }
+
+  .countdown-section::before {
+    width: 320px;
+
+    height: 220px;
+  }
+
+  .countdown-top-ornament {
+    gap: 9px;
+
+    margin-bottom: 10px;
+  }
+
+  .countdown-top-ornament::before,
+  .countdown-top-ornament::after {
+    width: 45px;
+  }
+
+  .countdown-title {
+    gap: 8px;
+
+    margin-bottom: 5px;
+
+    font-size: 19px;
+  }
+
+  .countdown-line {
+    width: 35px;
+  }
+
+  .countdown-date {
+    margin-top: 27px;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+  }
+
+  .countdown-frame {
+    margin-top: 18px;
+
+    padding: 23px 8px 21px;
+  }
+
+  .countdown-container {
+    gap: 5px;
+  }
+
+  .countdown-box {
+    min-width: 0;
+
+    height: 82px;
+
+    max-width: none;
+  }
+
+  .countdown-number {
+    font-size: 34px;
+
+    letter-spacing: 0;
+  }
+
+  .countdown-label {
+    margin-top: 13px;
+
+    font-size: 11px;
+  }
+
+  .countdown-number::after {
+    bottom: -10px;
+
+    width: 16px;
+  }
+
+  .countdown-separator {
+    width: 7px;
+
+    height: 82px;
+
+    gap: 6px;
+  }
+
+  .countdown-separator::before,
+  .countdown-separator::after {
+    width: 2px;
+
+    height: 2px;
+  }
+
+  .countdown-message {
+    margin-top: 21px;
+
+    font-size: 14px;
+  }
+
+  .countdown-message span:last-child {
+    font-size: 12px;
+  }
+
+  .countdown-bottom-ornament {
+    margin-top: 20px;
+  }
+
+  .countdown-bottom-ornament::before,
+  .countdown-bottom-ornament::after {
+    width: 32px;
+  }
+
+  .countdown-box::after {
+    inset: 4px;
+  }
+}
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 360px) {
+  .countdown-section {
+    padding-left: 3px;
+
+    padding-right: 3px;
+  }
+
+  .countdown-title {
+    font-size: 17px;
+  }
+
+  .countdown-line {
+    width: 25px;
+  }
+
+  .countdown-date {
+    font-size: 11px;
+
+    letter-spacing: 2px;
+  }
+
+  .countdown-frame {
+    padding-left: 5px;
+
+    padding-right: 5px;
+  }
+
+  .countdown-container {
+    gap: 3px;
+  }
+
+  .countdown-box {
+    height: 73px;
+  }
+
+  .countdown-number {
+    font-size: 29px;
+  }
+
+  .countdown-label {
+    margin-top: 11px;
+
+    font-size: 10px;
+  }
+
+  .countdown-separator {
+    width: 5px;
+
+    height: 73px;
+  }
+
+  .countdown-message {
+    font-size: 13px;
+  }
+}
