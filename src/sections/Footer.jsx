@@ -20,7 +20,7 @@ export default function Footer() {
           <div className="monogram-circle">
             <div className="monogram-h">H</div>
 
-            <div className="monogram-s">S</div>
+            <div className="monogram-s">A</div>
 
             <div className="monogram-amp">&</div>
           </div>

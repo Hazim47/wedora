@@ -44,7 +44,7 @@ export default function WeddingDoor() {
   return (
     <main className="wedding-page">
       {/* صوت الجاهة */}
-      <audio ref={audioRef} src="/music/jahah.mp3" preload="auto" />
+      <audio ref={audioRef} src="/music/Audio.mp3" preload="auto" />
       {/* =====================================================
           INVITATION SCREEN
       ===================================================== */}
@@ -206,7 +206,7 @@ export default function WeddingDoor() {
                     <div className="parent-card">
                       <span className="parent-title">السيد</span>
 
-                      <span className="parent-name">باسم حسن موسى</span>
+                      <span className="parent-name">براهيم خالد ابو كف</span>
                     </div>
 
                     {/* CENTER ORNAMENT */}
@@ -584,7 +584,7 @@ export default function WeddingDoor() {
 
                     <span className="initial-divider">&</span>
 
-                    <span className="initial">S</span>
+                    <span className="initial">A</span>
                   </motion.button>
                 )}
 
