@@ -11,95 +11,125 @@ export default function VenueLocation() {
   return (
     <motion.section
       className="venue-section"
-      initial={{
-        opacity: 0,
-        y: 80,
-      }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{
-        once: true,
-        amount: 0.2,
-      }}
-      transition={{
-        duration: 1.1,
-        ease: [0.22, 1, 0.36, 1],
-      }}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 1.2 }}
     >
       {/* =========================================
-          TOP TITLE
+          BACKGROUND ORNAMENT
+      ========================================= */}
+
+      <div className="venue-orbit venue-orbit-one" />
+      <div className="venue-orbit venue-orbit-two" />
+
+      {/* =========================================
+          HEADER
       ========================================= */}
 
       <motion.div
-        className="venue-heading"
-        initial={{ opacity: 0, y: 20 }}
+        className="venue-header"
+        initial={{ opacity: 0, y: 35 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
+        transition={{
+          duration: 1,
+          ease: [0.22, 1, 0.36, 1],
+        }}
       >
-        <div className="venue-decoration">
-          <span />
-          <b>✦</b>
-          <span />
+        <div className="venue-eyebrow">
+          <span className="venue-eyebrow-line" />
+          <span>موقع الاحتفال</span>
+          <span className="venue-eyebrow-line" />
         </div>
 
-        <p className="venue-small-title">مكان الاحتفال</p>
+        <h2 className="venue-title">
+          حيث تبدأ
+          <br />
+          <em>أجمل لحظاتنا</em>
+        </h2>
 
-        <h2 className="venue-title">{venueName}</h2>
-
-        <p className="venue-subtitle">شارع زهران — عمّان</p>
+        <p className="venue-description">
+          يسعدنا أن نشارككم فرحتنا
+          <br />
+          في هذا المكان المميز
+        </p>
       </motion.div>
 
       {/* =========================================
-          IMAGE
+          MAIN LOCATION CARD
       ========================================= */}
 
-      <motion.div
-        className="venue-image-wrapper"
+      <motion.a
+        href={locationUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="venue-card"
         initial={{
           opacity: 0,
+          y: 70,
           scale: 0.94,
         }}
         whileInView={{
           opacity: 1,
+          y: 0,
           scale: 1,
         }}
         viewport={{
           once: true,
-          amount: 0.25,
+          amount: 0.2,
         }}
         transition={{
-          duration: 1.1,
+          duration: 1.2,
           delay: 0.15,
           ease: [0.22, 1, 0.36, 1],
         }}
+        whileHover={{
+          y: -8,
+        }}
+        whileTap={{
+          scale: 0.985,
+        }}
       >
-        <img src="/images/hall.jpg" alt={venueName} className="venue-image" />
+        {/* IMAGE */}
 
-        {/* Inner frame */}
-        <div className="venue-image-frame" />
+        <div className="venue-card-image">
+          <img src="/images/hall.jpg" alt={venueName} />
 
-        {/* Image shine */}
-        <div className="venue-image-shine" />
+          <div className="venue-image-dark" />
+          <div className="venue-image-glow" />
+          <div className="venue-image-shine" />
 
-        {/* Corner ornaments */}
-        <span className="venue-corner venue-corner-tl">✦</span>
+          {/* Elegant border */}
 
-        <span className="venue-corner venue-corner-tr">✦</span>
+          <div className="venue-inner-border" />
 
-        <span className="venue-corner venue-corner-bl">✦</span>
+          {/* BOTTOM OVERLAY */}
 
-        <span className="venue-corner venue-corner-br">✦</span>
-      </motion.div>
+          <div className="venue-card-bottom">
+            <div className="venue-card-info">
+              <span>مكان الاحتفال</span>
+
+              <strong>{venueName}</strong>
+
+              <small>شارع زهران — عمّان</small>
+            </div>
+
+            <div className="venue-open">
+              <span>فتح الموقع</span>
+
+              <div className="venue-open-arrow">↗</div>
+            </div>
+          </div>
+        </div>
+      </motion.a>
 
       {/* =========================================
           LOCATION INFO
       ========================================= */}
 
       <motion.div
-        className="venue-location-info"
+        className="venue-meta"
         initial={{
           opacity: 0,
           y: 25,
@@ -110,87 +140,64 @@ export default function VenueLocation() {
         }}
         viewport={{
           once: true,
-          amount: 0.4,
         }}
         transition={{
-          duration: 0.8,
-          delay: 0.35,
+          duration: 0.9,
+          delay: 0.55,
         }}
       >
-        <div className="venue-info-line" />
+        <div className="venue-meta-item">
+          <span className="venue-meta-icon">⌖</span>
 
-        <div className="venue-pin">
-          <span>⌖</span>
+          <div>
+            <small>الموقع</small>
+            <strong>عمّان — الأردن</strong>
+          </div>
         </div>
 
-        <div className="venue-info-line" />
+        <div className="venue-meta-divider" />
+
+        <div className="venue-meta-item">
+          <span className="venue-meta-icon">✦</span>
+
+          <div>
+            <small>المكان</small>
+            <strong>فندق الرويال</strong>
+          </div>
+        </div>
       </motion.div>
 
       {/* =========================================
-          BUTTON
-      ========================================= */}
-
-      <motion.a
-        href={locationUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="location-button"
-        initial={{
-          opacity: 0,
-          y: 20,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        viewport={{
-          once: true,
-        }}
-        transition={{
-          duration: 0.8,
-          delay: 0.45,
-        }}
-        whileHover={{
-          y: -4,
-        }}
-        whileTap={{
-          scale: 0.96,
-        }}
-      >
-        <span className="location-icon">📍</span>
-
-        <span>كيفية الوصول</span>
-
-        <span className="location-arrow">←</span>
-      </motion.a>
-
-      {/* =========================================
-          BOTTOM TEXT
+          BOTTOM
       ========================================= */}
 
       <motion.div
-        className="venue-bottom"
+        className="venue-footer"
         initial={{
           opacity: 0,
+          scale: 0.9,
         }}
         whileInView={{
           opacity: 1,
+          scale: 1,
         }}
         viewport={{
           once: true,
         }}
         transition={{
           duration: 0.8,
-          delay: 0.65,
+          delay: 0.75,
         }}
       >
-        <span>ننتظركم بكل حب</span>
+        <span className="venue-footer-line" />
 
-        <div>
-          <i />
-          <b>♡</b>
-          <i />
-        </div>
+        <span className="venue-heart">♡</span>
+
+        <span className="venue-footer-text">ننتظركم بكل حب</span>
+
+        <span className="venue-heart">♡</span>
+
+        <span className="venue-footer-line" />
       </motion.div>
     </motion.section>
   );
