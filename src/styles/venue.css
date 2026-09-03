@@ -102,7 +102,7 @@
   margin-bottom: 17px;
   color: #a47b49;
   font-family: "Cormorant Garamond", serif;
-  font-size: 12px;
+  font-size: 25px;
   font-weight: 600;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -636,21 +636,22 @@
   align-items: center;
   justify-content: center;
 
-  gap: 25px;
+  gap: 35px;
+  margin-top: 30px;
+  padding: 22px 28px;
 
-  margin-top: 28px;
-  padding: 17px 22px;
-
-  border: 1px solid rgba(166, 127, 76, 0.16);
-  border-radius: 18px;
+  border: 2px solid rgba(166, 127, 76, 0.28);
+  border-radius: 22px;
 
   background: linear-gradient(
     135deg,
-    rgba(255, 251, 243, 0.82),
-    rgba(245, 235, 218, 0.55)
+    rgba(255, 251, 243, 0.88),
+    rgba(245, 235, 218, 0.65)
   );
 
-  box-shadow: 0 15px 35px rgba(72, 49, 28, 0.05);
+  box-shadow:
+    0 18px 40px rgba(72, 49, 28, 0.07),
+    0 0 0 1px rgba(166, 127, 76, 0.04);
 
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -670,20 +671,20 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex-shrink: 0;
 
-  width: 34px;
-  height: 34px;
+  width: 46px;
+  height: 46px;
 
-  border: 1px solid rgba(166, 127, 76, 0.25);
+  border: 2px solid rgba(166, 127, 76, 0.32);
   border-radius: 50%;
 
-  background: rgba(255, 250, 240, 0.7);
-
+  background: rgba(255, 250, 240, 0.85);
   color: #a77d4b;
 
-  font-size: 15px;
+  font-size: 21px;
+
+  box-shadow: 0 5px 15px rgba(166, 127, 76, 0.1);
 }
 
 .venue-meta-item div {
@@ -692,31 +693,31 @@
   gap: 1px;
 }
 
+.venue-meta-item small {
+  color: #a47b4d;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
 .venue-meta-item strong {
   color: #5c4128;
   font-family: "Amiri", serif;
-  font-size: 18px;
+  font-size: 21px;
   font-weight: 700;
   line-height: 1.5;
   white-space: nowrap;
 }
 
-.venue-meta-item small {
-  color: #a47b4d;
-  font-family: "Cormorant Garamond", serif;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-}
-
 .venue-meta-divider {
-  width: 1px;
-  height: 35px;
+  width: 2px;
+  height: 48px;
 
   background: linear-gradient(
     180deg,
     transparent,
-    rgba(166, 127, 76, 0.25),
+    rgba(166, 127, 76, 0.32),
     transparent
   );
 }
@@ -828,10 +829,6 @@
   }
 
   /* =====================================================
-     CARD — FULL PHONE WIDTH
-  ===================================================== */
-
-  /* =====================================================
      IMAGE — FULL SCREEN WIDTH
   ===================================================== */
 
@@ -924,41 +921,38 @@
 
   .venue-meta {
     width: auto;
-
-    margin: 20px 12px 0;
-
-    padding: 13px 12px;
-
-    gap: 12px;
-
-    border-radius: 15px;
-
+    margin: 22px 12px 0;
+    padding: 18px 16px;
+    gap: 18px;
+    border: 2px solid rgba(166, 127, 76, 0.28);
+    border-radius: 18px;
     box-sizing: border-box;
   }
 
   .venue-meta-icon {
-    width: 29px;
-    height: 29px;
-    font-size: 13px;
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(166, 127, 76, 0.3);
+    font-size: 18px;
   }
 
   .venue-meta-item {
-    gap: 7px;
+    gap: 9px;
   }
 
   .venue-meta-item small {
-    font-size: 11px;
+    font-size: 13px;
   }
 
   .venue-meta-item strong {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 700;
   }
 
   .venue-meta-divider {
-    height: 29px;
+    width: 2px;
+    height: 40px;
   }
-
   /* =====================================================
      FOOTER
   ===================================================== */
