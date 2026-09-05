@@ -29,7 +29,7 @@ export default function WeddingDoor() {
 
     timerRef.current = setTimeout(() => {
       setFinished(true);
-    }, 1100);
+    }, 950);
   };
 
   // تنظيف المؤقت عند مغادرة الصفحة
@@ -503,18 +503,6 @@ export default function WeddingDoor() {
 
               <div className="wedding-door">
                 {/* LIGHT BEHIND GATE */}
-                <motion.div
-                  className="door-opening-light"
-                  animate={{
-                    opacity: opening ? 1 : 0,
-                    scaleX: opening ? 1 : 0.15,
-                    scaleY: opening ? 1 : 0.9,
-                  }}
-                  transition={{
-                    duration: 1.8,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                />
 
                 {/* LEFT GATE */}
                 <motion.div
@@ -523,11 +511,9 @@ export default function WeddingDoor() {
                     opening
                       ? {
                           x: "-105%",
-                          rotateY: -18,
                         }
                       : {
                           x: 0,
-                          rotateY: 0,
                         }
                   }
                   transition={{
@@ -551,11 +537,9 @@ export default function WeddingDoor() {
                     opening
                       ? {
                           x: "105%",
-                          rotateY: 18,
                         }
                       : {
                           x: 0,
-                          rotateY: 0,
                         }
                   }
                   transition={{
@@ -587,25 +571,6 @@ export default function WeddingDoor() {
                     <span className="initial">A</span>
                   </motion.button>
                 )}
-
-                {/* LIGHT FLASH */}
-                <motion.div
-                  className="opening-flash"
-                  initial={{
-                    opacity: 0,
-                    scale: 0.4,
-                  }}
-                  animate={{
-                    opacity: opening ? [0, 0.9, 0.65, 0] : 0,
-
-                    scale: opening ? [0.4, 1, 1.8, 2.4] : 0.4,
-                  }}
-                  transition={{
-                    duration: 1,
-                    times: [0, 0.18, 0.55, 1],
-                    ease: "easeOut",
-                  }}
-                />
               </div>
             </div>
           </motion.section>
