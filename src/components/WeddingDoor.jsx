@@ -116,7 +116,7 @@ export default function WeddingDoor() {
                     className="bismillah"
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.35, duration: 0.8 }}
+                    transition={{ delay: 0.35, duration: 0.95 }}
                   >
                     بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ
                   </motion.div>
@@ -523,7 +523,7 @@ export default function WeddingDoor() {
                     opening
                       ? {
                           x: "-105%",
-                          rotateY: -28,
+                          rotateY: -18,
                         }
                       : {
                           x: 0,
@@ -551,7 +551,7 @@ export default function WeddingDoor() {
                     opening
                       ? {
                           x: "105%",
-                          rotateY: 28,
+                          rotateY: 18,
                         }
                       : {
                           x: 0,
